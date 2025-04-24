@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "dd68d55f1dd7284774ecb9753f69eb85"
+application_url = "https://meat-portrait-miscellaneous-po.trycloudflare.com"
+embedded = true
+name = "Apex Local"
+handle = "apex-local"
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-01"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_content,read_metaobject_definitions,read_metaobjects,read_orders,write_products"
+
+[auth]
+redirect_urls = [
+  "https://meat-portrait-miscellaneous-po.trycloudflare.com/auth/callback",
+  "https://meat-portrait-miscellaneous-po.trycloudflare.com/auth/shopify/callback",
+  "https://meat-portrait-miscellaneous-po.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false

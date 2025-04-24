@@ -1,0 +1,44 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"ui": "tui",
+	"globalDependencies": [".env"],
+	"globalEnv": ["SHOPIFY_API_KEY"],
+	"tasks": {
+		"typecheck": {
+			"dependsOn": ["^build"]
+		},
+		"//#lint": {
+			"dependsOn": ["^build"]
+		},
+		"//#lint:fix": {
+			"dependsOn": ["^build"]
+		},
+		"css:build": {
+			"cache": false
+		},
+		"css:build:watch": {
+			"persistent": true
+		},
+		"db:generate": {
+			"cache": false
+		},
+		"//#dev:shopify": {
+			"cache": false,
+			"persistent": true,
+			"interactive": true
+		},
+		"build": {
+			"dependsOn": [
+				"@apex/backend#db:generate",
+				"@apex/backend#css:build",
+				"^build"
+			],
+			"outputs": ["dist"]
+		},
+		"build:watch": {
+			"dependsOn": ["@apex/backend#db:generate"],
+			"cache": false,
+			"persistent": true
+		}
+	}
+}

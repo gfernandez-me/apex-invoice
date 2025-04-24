@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-neutral-100;
+  }
+
+  @page {
+    size: A3;
+    margin: 10mm;
+  }
+
+  @media print {
+    html,
+    body {
+      @apply bg-white;
+    }
+    footer {
+      page-break-after: always;
+    }
+    thead {
+      @apply table-header-group;
+    }
+    tfoot {
+      @apply table-footer-group;
+    }
+
+    tr {
+      @apply break-inside-avoid;
+    }
+
+    /* table {
+      @apply break-inside-avoid;
+    } */
+
+    button {
+      @apply hidden;
+    }
+
+    body {
+      @apply m-0;
+    }
+  }
+}
+@layer components {
+  .page-footer,
+  .page-footer-space {
+    @apply h-8;
+  }
+
+  .page-footer {
+    @apply fixed bottom-0 w-full text-center;
+  }
+}

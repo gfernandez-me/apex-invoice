@@ -1,0 +1,8 @@
+[[extensions]]
+type = "admin_link"
+name = "View Invoice - Remix"
+handle = "view-invoice"
+
+[[extensions.targeting]]
+url = "app://invoices"
+target = "admin.order-details.action.link"

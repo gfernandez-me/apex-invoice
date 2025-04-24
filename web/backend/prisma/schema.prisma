@@ -1,0 +1,184 @@
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+model ShopifySession {
+  id               String    @id @map("_id")
+  state            String
+  isOnline         Boolean   @map("is_online")
+  shop             String
+  scope            String?
+  expires          DateTime?
+  accessToken      String?
+  onlineAccessInfo Int?
+
+  @@map("shopify_sessions")
+}
+
+model ShopifyWebhook {
+  id        String   @id @map("_id")
+  topic     String
+  invoice   Invoice? @relation(fields: [invoiceId], references: [id])
+  invoiceId String?
+
+  @@map("shopify_webhooks")
+}
+
+model Shop {
+  id              String      @id @map("_id")
+  billing_address ShopAddress
+  name            String
+  url             String
+  email           String
+  contact_email   String
+  currency_code   String
+  host            String      @unique
+  gst_hst_number  String?
+  shopify_domain  String      @unique
+  invoices        Invoice[]
+
+  @@map("shop")
+}
+
+model Invoice {
+  id                       String             @id @map("_id")
+  sent                     Boolean            @default(false)
+  admin_graphql_api_id     String
+  updated_at               DateTime
+  created_at               DateTime
+  number                   Int
+  order_number             Int
+  name                     String
+  note                     String?
+  email                    String?
+  financial_status         FinancialStatus?
+  fulfillment_status       FulfillmentStatus?
+  customer                 Customer?
+  taxes_included           Boolean
+  subtotal_price_set       MoneyBag
+  total_discounts_set      MoneyBag
+  total_price_set          MoneyBag
+  total_shipping_price_set MoneyBag
+  total_tax_set            MoneyBag
+  excise_tax_line_item     LineItem?
+  excise_tax_line_items    LineItem[]
+  billing_address          MailAddress?
+  shipping_address         MailAddress?
+  line_items               LineItem[]
+  shopifyWebhooks          ShopifyWebhook[]
+  shop                     Shop               @relation(fields: [shopId], references: [id])
+  shopId                   String
+  tax_lines                TaxLine[]
+  closed_at                DateTime?
+  cancelled_at             DateTime?
+  processed_at             DateTime
+  pad_due_date             DateTime?
+
+  @@map("invoices")
+}
+
+type TaxLine {
+  title     String
+  price_set MoneyBag
+  rate      Float?
+}
+
+type LineItem {
+  admin_graphql_api_id String
+  product_id           Int?
+  variant_id           Int?
+  sku                  String?
+  quantity             Int
+  name                 String
+  title                String
+
+  variant_compare_at_price Money?
+  variant_price            Money?
+
+  price_set             MoneyBag
+  total_discount_set    MoneyBag
+  excise_tax            Money?
+  tax_lines             TaxLine[]
+  variant_title         String?
+  vendor                String?
+  provincial_tax        Money?
+  provincial_name       String?
+  provincial_color      String?
+  provincial_text_color String?
+  msrp1                 String?
+  msrp2                 String?
+}
+
+type MoneyBag {
+  shop_money        Money
+  presentment_money Money
+}
+
+type Money {
+  amount        String
+  approx        Float
+  currency_code String
+}
+
+type Customer {
+  email        String?
+  first_name   String?
+  last_name    String?
+  shopifyId    String?
+}
+
+type MailAddress {
+  address1      String?
+  address2      String?
+  city          String?
+  zip           String?
+  country       String?
+  country_code  String?
+  province_code String?
+  province      String?
+  phone         String?
+  company       String?
+  name          String?
+  first_name    String?
+  last_name     String?
+  latitude      Float?
+  longitude     Float?
+}
+
+enum FinancialStatus {
+  pending
+  authorized
+  partially_paid
+  paid
+  partially_refunded
+  refunded
+  voided
+}
+
+enum FulfillmentStatus {
+  fulfilled
+  partial
+  restocked
+}
+
+type ShopAddress {
+  address1      String?
+  address2      String?
+  city          String?
+  company       String?
+  country       String?
+  country_code  String?
+  province_code String?
+  province      String?
+  phone         String?
+  zip           String?
+  name          String?
+  latitude      Float?
+  longitude     Float?
+}

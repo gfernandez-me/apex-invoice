@@ -1,0 +1,8 @@
+[[extensions]]
+type = "admin_link"
+name = "Download Invoice by Apex Remix"
+handle = "download-invoice-apex-remix"
+
+[[extensions.targeting]]
+url = "app://invoices/pdf"
+target = "admin.order-details.action.link"

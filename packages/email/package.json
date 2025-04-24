@@ -1,0 +1,24 @@
+{
+  "name": "@apex/email",
+  "type": "module",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "src/index.ts",
+  "scripts": {
+    "dev:email": "email dev -p 3001",
+    "build": "swc src -d dist --strip-leading-paths",
+    "build:watch": "swc src -w -d dist --strip-leading-paths"
+  },
+  "dependencies": {
+    "@react-email/components": "^0.0.21",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.3.10",
+    "@swc/core": "^1.4.2",
+    "@swc/plugin-transform-imports": "^1.5.113",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "react-email": "^2.1.6"
+  }
+}

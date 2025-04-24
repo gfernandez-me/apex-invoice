@@ -1,0 +1,21 @@
+{
+    "$schema": "https://swc.rs/schema.json",
+    "exclude": ["node_modules/", "dist/",".swc",".turbo"], 
+    "jsc": {
+      "parser": {
+        "syntax": "typescript",
+        "topLevelAwait": true,
+        "tsx": true
+      },
+       "transform": {
+        "react": {
+          "runtime": "automatic"
+        }
+       },
+      "target": "esnext"
+    },
+    "module": {
+      "type": "es6",
+      "resolveFully": true
+    }
+  }

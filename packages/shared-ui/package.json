@@ -1,0 +1,24 @@
+{
+  "name": "@apex/shared-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "src/index.tsx",
+  "description": "Shared UI package",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "swc src -d dist --strip-leading-paths",
+    "build:watch": "swc src -w -d dist --strip-leading-paths"
+  },
+  "keywords": [],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@apex/config": "workspace:*",
+    "@apex/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.6.0",
+    "@swc/core": "^1.10.17"
+  }
+}

@@ -1,0 +1,27 @@
+query GetShopProfile {
+  shop {
+    id
+    url
+    primaryDomain {
+      host
+    }
+    myshopifyDomain
+    email
+    name
+    contactEmail
+    currencyCode
+    billingAddress {
+      address1
+      address2
+      city
+      provinceCode
+      country
+      phone
+      countryCodeV2
+      latitude
+      longitude
+      province
+      zip
+    }
+  }
+}

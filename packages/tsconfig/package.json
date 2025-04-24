@@ -1,0 +1,9 @@
+{
+  "name": "@apex/tsconfig",
+  "version": "0.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0"
+  }
+}

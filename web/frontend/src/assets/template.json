@@ -1,0 +1,212 @@
+{
+  "id": "5085352329463",
+  "sent": false,
+  "admin_graphql_api_id": "gid://shopify/Order/5085352329463",
+  "updated_at": "2023-02-06T19:23:10Z",
+  "created_at": "2023-02-06T19:23:09Z",
+  "number": 546,
+  "order_number": 1546,
+  "name": "#12345A",
+  "note": "Please ship FEDEX and include FREE STLTH STAND",
+  "financial_status": "partially_paid",
+  "fulfillment_status": null,
+  "taxes_included": false,
+  "customer": {
+    "email": "leo2@test.com",
+    "last_name": "NYX DON MILLS",
+    "first_name": null
+  },
+  "subtotal_price_set": {
+    "shop_money": {
+      "amount": "41.50",
+      "currency_code": "CAD",
+      "approx": 41.5
+    },
+    "presentment_money": {
+      "amount": "41.50",
+      "currency_code": "CAD",
+      "approx": 41.5
+    }
+  },
+  "total_discounts_set": {
+    "shop_money": {
+      "amount": "0.00",
+      "currency_code": "CAD",
+      "approx": 0.0
+    },
+    "presentment_money": {
+      "amount": "0.00",
+      "currency_code": "CAD",
+      "approx": 0.0
+    }
+  },
+  "total_price_set": {
+    "shop_money": {
+      "amount": "41.50",
+      "currency_code": "CAD",
+      "approx": 41.5
+    },
+    "presentment_money": {
+      "amount": "41.50",
+      "currency_code": "CAD",
+      "approx": 41.5
+    }
+  },
+  "total_shipping_price_set": {
+    "shop_money": {
+      "amount": "0.00",
+      "currency_code": "CAD",
+      "approx": 0
+    },
+    "presentment_money": {
+      "amount": "0.00",
+      "currency_code": "CAD",
+      "approx": 0
+    }
+  },
+  "total_tax_set": {
+    "shop_money": {
+      "amount": "0.00",
+      "currency_code": "CAD",
+      "approx": 0
+    },
+    "presentment_money": {
+      "amount": "0.00",
+      "currency_code": "CAD",
+      "approx": 0
+    }
+  },
+  "line_items": [
+    {
+      "admin_graphql_api_id": "669751112",
+      "excise_tax": null,
+      "fulfillable_quantity": 1,
+      "fulfillment_service": "amazon",
+      "fulfillment_status": "fulfilled",
+      "grams": 500,
+      "id": 669751112,
+      "price": "199.99",
+      "product_id": 7513594,
+      "quantity": 1,
+      "requires_shipping": true,
+      "sku": "IPOD-342-N",
+      "title": "IPod Nano",
+      "variant_id": 4264112,
+      "variant_title": "Pink",
+      "vendor": "Apple",
+      "name": "IPod Nano - Pink",
+      "gift_card": false,
+      "price_set": {
+        "shop_money": {
+          "amount": "199.99",
+          "currency_code": "USD",
+          "approx": 199.99
+        },
+        "presentment_money": {
+          "amount": "173.30",
+          "currency_code": "EUR",
+          "approx": 173.3
+        }
+      },
+      "properties": [
+        {
+          "name": "custom engraving",
+          "value": "Happy Birthday Mom!"
+        }
+      ],
+      "taxable": true,
+      "tax_lines": [
+        {
+          "title": "HST",
+          "price": "25.81",
+          "price_set": {
+            "shop_money": {
+              "amount": "25.81",
+              "currency_code": "USD",
+              "approx": 25.81
+            },
+            "presentment_money": {
+              "amount": "20.15",
+              "currency_code": "EUR",
+              "approx": 20.15
+            }
+          },
+          "channel_liable": true,
+          "rate": 0.13
+        }
+      ],
+      "total_discount": "5.00",
+      "total_discount_set": {
+        "shop_money": {
+          "amount": "5.00",
+          "currency_code": "USD",
+          "approx": 5.0
+        },
+        "presentment_money": {
+          "amount": "4.30",
+          "currency_code": "EUR",
+          "approx": 4.3
+        }
+      },
+      "discount_allocations": [
+        {
+          "amount": "5.00",
+          "discount_application_index": 2,
+          "amount_set": {
+            "shop_money": {
+              "amount": "5.00",
+              "currency_code": "USD"
+            },
+            "presentment_money": {
+              "amount": "3.96",
+              "currency_code": "EUR"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "excise_tax_line_item": null,
+  "billing_address": {
+    "address1": "2259 Park Ct",
+    "address2": "partment 5",
+    "company": "NYX DON MILLS",
+    "city": "Toronto",
+    "zip": "M5T2S6",
+    "country": "Canada",
+    "first_name": "Christopher",
+    "last_name": "Gorski",
+    "latitude": null,
+    "longitude": null,
+    "province": "Alberta",
+    "province_code": "AL",
+    "country_code": "CA",
+    "name": "Christopher Gorski",
+    "phone": null
+  },
+  "shipping_address": null,
+  "email": null,
+  "tax_lines": [],
+  "shop": {
+    "gst_hst_number": "2930239203",
+    "url": "https://app-forge.myshopify.com",
+    "email": "leonardo@valordistributions.com",
+    "contact_email": "leonardo@valordistributions.com",
+    "currency_code": "CAD",
+    "host": "app-forge.myshopify.com",
+    "billing_address": {
+      "address1": "120 Nashdene Road",
+      "address2": null,
+      "city": "Scarborough",
+      "phone": "",
+      "latitude": 43.8200772,
+      "longitude": -79.2504891,
+      "country": "Canada",
+      "country_code": "CA",
+      "province_code": "ON",
+      "province": "Ontario",
+      "zip": "M1V 2W3"
+    },
+    "name": "App Forge"
+  }
+}

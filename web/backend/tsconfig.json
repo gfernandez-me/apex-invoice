@@ -1,0 +1,8 @@
+{
+	"extends": "@apex/tsconfig/base.json",
+	"compilerOptions": {
+		"outDir": "dist",
+	},
+	"include": ["./**/*.ts", "./**/*.d.ts", "./**/*.tsx"],
+	"exclude": ["node_modules", "dist"]
+}
